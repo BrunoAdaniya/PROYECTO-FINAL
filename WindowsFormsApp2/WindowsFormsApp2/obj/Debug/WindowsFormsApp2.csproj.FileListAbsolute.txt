@@ -10,3 +10,5 @@ C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\WindowsFormsApp2\WindowsFormsA
 C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Crear_Usuario.resources
+C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Menu.resources
+C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Progreso.resources

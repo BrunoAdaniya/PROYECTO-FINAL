@@ -14,7 +14,6 @@ namespace WindowsFormsApp2
     public partial class Crear_Usuario : Form
     {
         OleDbConnection connection = new OleDbConnection();
-        OleDbCommand command = new OleDbCommand();
         public Crear_Usuario()
         {
             InitializeComponent();
@@ -24,27 +23,20 @@ namespace WindowsFormsApp2
         private void Button1_Click(object sender, EventArgs e)
         {
             connection.Open();
+            OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
-            command.CommandText = ("INSERT INTO info (Usuario, Contraseña) VALUES ('" + txtUser.Text + "', '" + txtPassword.Text + "')");
-
-            OleDbDataReader Reader = command.ExecuteReader();
-            int count = 0;
-            while (Reader.Read())
-            {
-                count = count + 1;
-                count++;
-            }
-            if (count >= 1)
-            {
-                MessageBox.Show("Su usuario fue creado correctamente");
-                connection.Close();
-                connection.Dispose();
-                this.Hide();
-                Form1 f1 = new Form1();
-                f1.ShowDialog();
-                
-            }
+            command.CommandText = ("INSERT INTO InformacionUsuarios (User, Password) VALUES ('" + txtUser.Text + "', '" + txtPassword.Text + "')");
+            command.ExecuteNonQuery();
+            MessageBox.Show("Su usuario fue creado correctamente, ahora inicie sesion");
+            Form1 f1 = new Form1();
+            this.Hide();
+            f1.Show();
             connection.Close();
+        }
+
+        private void Crear_Usuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

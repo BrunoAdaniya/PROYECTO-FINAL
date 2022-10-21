@@ -51,6 +51,7 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "TRISTE";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
@@ -60,6 +61,7 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "ENOJADO";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // Emociones
             // 

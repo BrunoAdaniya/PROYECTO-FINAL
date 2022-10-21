@@ -39,14 +39,10 @@ namespace WindowsFormsApp2
             else
             {
                 connection.Open(); 
-                string query = ("SELECT Usuario, Contraseña FROM info WHERE Usuario='"+txtUser.Text+"' AND Contraseña'"+txtPassword.Text+"'");
-                OleDbCommand command = new OleDbCommand(query,  connection);
-                OleDbDataAdapter Adapter = new OleDbDataAdapter();
-                Adapter.SelectCommand = command;
-                OleDbDataReader Reader = command.ExecuteReader();
+                OleDbCommand query = new OleDbCommand("SELECT User, Password FROM InformacionUsuarios WHERE User= '" + txtUser.Text + "' AND Password= '" + txtPassword.Text + "'", connection);
+                string dato = Convert.ToString(query);
 
-                User = txtUser.Text;
-                Password = txtPassword.Text;
+                OleDbDataReader Reader = query.ExecuteReader();
 
                 int i = 0;
 

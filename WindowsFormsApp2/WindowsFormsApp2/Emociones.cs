@@ -28,17 +28,50 @@ namespace WindowsFormsApp2
         {
             DateTime dt = DateTime.Now;
             connection.Open();
-            command = new OleDbCommand("UPDATE emociones SET emocion='" + A + "' WHERE '"+Form1.User+"'",connection);
-            command = new OleDbCommand("UPDATE emociones SET fecha='" + dt.ToShortDateString() + "' WHERE  '"+Form1.Password+"'",connection);
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = connection;
+            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha) VALUES ('" + A + "', '" + dt.ToShortDateString() + "')", connection);
             command.ExecuteNonQuery();
             connection.Close();
 
-
+            Menu MN = new Menu();
+            this.Hide();
+            MN.Show();
         }
 
         private void Emociones_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            connection.Open();
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = connection;
+            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha) VALUES ('" + A + "', '" + dt.ToShortDateString() + "')", connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+
+            Menu MN = new Menu();
+            this.Hide();
+            MN.Show();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            connection.Open();
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = connection;
+            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha) VALUES ('" + A + "', '" + dt.ToShortDateString() + "')", connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+
+            Menu MN = new Menu();
+            this.Hide();
+            MN.Show();
         }
     }
 }

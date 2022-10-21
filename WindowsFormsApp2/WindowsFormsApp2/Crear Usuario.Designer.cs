@@ -89,6 +89,7 @@
             this.Controls.Add(this.txtUser);
             this.Name = "Crear_Usuario";
             this.Text = "Crear_Usuario";
+            this.Load += new System.EventHandler(this.Crear_Usuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

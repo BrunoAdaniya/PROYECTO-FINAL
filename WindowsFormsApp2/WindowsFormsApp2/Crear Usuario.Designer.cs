@@ -33,11 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(357, 261);
+            this.button1.Location = new System.Drawing.Point(349, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 9;
@@ -77,11 +78,23 @@
             this.txtUser.Size = new System.Drawing.Size(167, 20);
             this.txtUser.TabIndex = 5;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Administrador",
+            "Estudiante"});
+            this.comboBox1.Location = new System.Drawing.Point(349, 251);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 10;
+            // 
             // Crear_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -102,5 +115,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

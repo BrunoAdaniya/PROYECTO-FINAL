@@ -17,7 +17,7 @@ namespace WindowsFormsApp2
         public Crear_Usuario()
         {
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False";
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False";
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace WindowsFormsApp2
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO InformacionUsuarios (User, Password) VALUES('" + txtUser.Text + "', '" + txtPassword.Text + "')";
+                command.CommandText = "INSERT INTO InformacionUsuarios (User, Password) values ('" + txtUser.Text + "', '" + txtPassword.Text + "')";
                 command.ExecuteNonQuery();
                 MessageBox.Show("Su usuario fue creado correctamente, ahora inicie sesion");
                 connection.Close();

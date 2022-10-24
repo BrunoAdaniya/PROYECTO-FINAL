@@ -21,7 +21,7 @@ namespace WindowsFormsApp2
         public Emociones()
         {
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False"; 
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False";
         }
 
         private void Button2_Click(object sender, EventArgs e)

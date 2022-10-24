@@ -29,7 +29,7 @@ namespace WindowsFormsApp2
         private void Form1_Load(object sender, EventArgs e)
         {
             connection = new OleDbConnection();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False";
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False";
         }
 
         private void Button1_Click(object sender, EventArgs e)

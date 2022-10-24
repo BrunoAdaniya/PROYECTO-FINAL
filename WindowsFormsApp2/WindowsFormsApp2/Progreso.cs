@@ -14,6 +14,8 @@ namespace WindowsFormsApp2
     public partial class Progreso : Form
     {
         OleDbConnection connection = new OleDbConnection();
+        OleDbCommand command = new OleDbCommand();
+        OleDbDataAdapter Adapter;
         public Progreso()
         {
             InitializeComponent();
@@ -22,23 +24,14 @@ namespace WindowsFormsApp2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                MessageBox.Show("Ingresa un nombre");
-            }
-            else
-            {
-                OleDbCommand query = new OleDbCommand("SELECT Puntos, TiempoEnPantalla, Emocion, Fecha FROM info, EmocionesUsuarios WHERE Usuario='"+textBox1.Text+"' AND Id_User='" + Form1.ID+"'", connection);
-
-                DataSet dt = new DataSet();
-                connection.Open();
-                OleDbDataAdapter Adapter = new OleDbDataAdapter(query);
-                Adapter.Fill(dt);
-
-                dataGridView1.DataSource = dt;
-            }
+            connection.Open();
+            command.Connection = connection;
+            OleDbCommand query = new OleDbCommand("SELECT * FROM info WHERE Usuario='" + Form1.User + "'AND Contraseña='" + Form1.Password + "'", connection);
+            DataSet dt = new DataSet();
+            Adapter = new OleDbDataAdapter(query);
+            Adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
             connection.Close();
-
         }
 
         private void Button2_Click(object sender, EventArgs e)

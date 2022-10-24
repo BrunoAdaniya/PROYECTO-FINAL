@@ -30,7 +30,7 @@ namespace WindowsFormsApp2
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
-            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha, id_User) VALUES ('" + A + "', '" + dt.ToShortDateString() + "', "+Form1.ID+")", connection);
+            command = new OleDbCommand("INSERT INTO emociones (Emocion, Fecha, id_User) VALUES ('" + A + "', '" + dt.ToShortDateString() + "', "+Form1.ID+")", connection);
             command.ExecuteNonQuery();
             connection.Close();
 
@@ -50,7 +50,7 @@ namespace WindowsFormsApp2
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
-            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha, id_User) VALUES ('" + T + "', '" + dt.ToShortDateString() + "', " + Form1.ID + ")", connection);
+            command = new OleDbCommand("INSERT INTO emociones (Emocion, Fecha, id_User) VALUES ('" + T + "', '" + dt.ToShortDateString() + "', " + Form1.ID + ")", connection);
             command.ExecuteNonQuery();
             connection.Close();
 
@@ -65,7 +65,7 @@ namespace WindowsFormsApp2
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
-            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha, id_User) VALUES ('" + E + "', '" + dt.ToShortDateString() + "', " + Form1.ID + ")", connection);
+            command = new OleDbCommand("INSERT INTO emociones (Emocion, Fecha, id_User) VALUES ('" + E + "', '" + dt.ToShortDateString() + "', " + Form1.ID + ")", connection);
             command.ExecuteNonQuery();
             connection.Close();
 

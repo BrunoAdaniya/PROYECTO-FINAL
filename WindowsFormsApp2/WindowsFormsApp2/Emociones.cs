@@ -21,7 +21,7 @@ namespace WindowsFormsApp2
         public Emociones()
         {
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False;";
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False"; 
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace WindowsFormsApp2
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
-            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha) VALUES ('" + A + "', '" + dt.ToShortDateString() + "')", connection);
+            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha, id_User) VALUES ('" + A + "', '" + dt.ToShortDateString() + "', "+Form1.ID+")", connection);
             command.ExecuteNonQuery();
             connection.Close();
 
@@ -50,7 +50,7 @@ namespace WindowsFormsApp2
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
-            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha) VALUES ('" + A + "', '" + dt.ToShortDateString() + "')", connection);
+            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha, id_User) VALUES ('" + T + "', '" + dt.ToShortDateString() + "', " + Form1.ID + ")", connection);
             command.ExecuteNonQuery();
             connection.Close();
 
@@ -65,7 +65,7 @@ namespace WindowsFormsApp2
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
-            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha) VALUES ('" + A + "', '" + dt.ToShortDateString() + "')", connection);
+            command = new OleDbCommand("INSERT INTO EmocionesUsuarios (Emocion, Fecha, id_User) VALUES ('" + E + "', '" + dt.ToShortDateString() + "', " + Form1.ID + ")", connection);
             command.ExecuteNonQuery();
             connection.Close();
 

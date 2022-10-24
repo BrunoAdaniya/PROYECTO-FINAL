@@ -14,11 +14,10 @@ namespace WindowsFormsApp2
     public partial class Progreso : Form
     {
         OleDbConnection connection = new OleDbConnection();
-        OleDbCommand command = new OleDbCommand();
         public Progreso()
         {
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\48045008\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False;";
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\GitHub\PROYECTO-FINAL\PROYECTO_FINAL.accdb;Persist Security Info=False";
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -29,10 +28,9 @@ namespace WindowsFormsApp2
             }
             else
             {
-                OleDbCommand query = new OleDbCommand("SELECT Id, Puntos, TiempoEnPantalla FROM InformacionUsuarios WHERE User= '" + textBox1.Text + "'", connection);
-                string dato = Convert.ToString(query);
+                OleDbCommand query = new OleDbCommand("SELECT Puntos, TiempoEnPantalla, Emocion, Fecha FROM InformacionUsuarios, EmocionesUsuarios WHERE User='"+textBox1.Text+"' AND Id_User='" + Form1.ID+"'", connection);
 
-                DataTable dt = new DataTable();
+                DataSet dt = new DataSet();
                 connection.Open();
                 OleDbDataAdapter Adapter = new OleDbDataAdapter(query);
                 Adapter.Fill(dt);
@@ -45,8 +43,8 @@ namespace WindowsFormsApp2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            OleDbCommand query = new OleDbCommand("SELECT Id FROM InformacionUsuarios WHERE User= '" + textBox1.Text + "'", connection);
+            /*connection.Open();
+            OleDbCommand query = new OleDbCommand("SELECT Id FROM InformacionUsuarios WHERE User= '" + Form1.User + "'", connection);
             string dato = Convert.ToString(query);
             OleDbDataReader Reader = query.ExecuteReader();
 
@@ -54,7 +52,18 @@ namespace WindowsFormsApp2
             {
                MessageBox.Show("El ID del usuario ingresado es " + Reader.GetInt32(0));
             }
-            connection.Close();
+
+            connection.Close();*/
+
+        }
+
+        private void Progreso_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

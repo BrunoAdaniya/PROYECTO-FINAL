@@ -17,7 +17,7 @@ namespace WindowsFormsApp2
         public Crear_Usuario()
         {
             InitializeComponent();
-            
+
         }
 
         private void Crear_Usuario_Load(object sender, EventArgs e)
@@ -33,17 +33,13 @@ namespace WindowsFormsApp2
             }
             else
             {
-                string User = txtUser.Text;
-                string Password = txtPassword.Text;
-
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                command =new OleDbCommand ("INSERT INTO INFORMACION (User, Password) VALUES (@User, @Password)");
+                command.CommandText = "INSERT INTO info (Usuario, Contraseña) VALUES ('" + txtUser.Text + "', '" + txtPassword.Text + "')";
                 command.ExecuteNonQuery();
                 MessageBox.Show("Su usuario fue creado correctamente");
                 connection.Close();
-
             }
         }
     }

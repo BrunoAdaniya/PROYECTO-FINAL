@@ -40,7 +40,7 @@ namespace WindowsFormsApp2
             else
             {
                 connection.Open(); 
-                OleDbCommand query = new OleDbCommand("SELECT User, Password, Id FROM INFORMACION WHERE User= '" + txtUser.Text + "' AND Password= '" + txtPassword.Text + "'", connection);
+                OleDbCommand query = new OleDbCommand("SELECT Usuario, Contraseña, Id FROM info WHERE Usuario= '" + txtUser.Text + "' AND Contraseña= '" + txtPassword.Text + "'", connection);
                 string dato = Convert.ToString(query);
 
                 OleDbDataReader Reader = query.ExecuteReader();

@@ -28,7 +28,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                OleDbCommand query = new OleDbCommand("SELECT Puntos, TiempoEnPantalla, Emocion, Fecha FROM INFORMACION, EmocionesUsuarios WHERE User='"+textBox1.Text+"' AND Id_User='" + Form1.ID+"'", connection);
+                OleDbCommand query = new OleDbCommand("SELECT Puntos, TiempoEnPantalla, Emocion, Fecha FROM info, EmocionesUsuarios WHERE Usuario='"+textBox1.Text+"' AND Id_User='" + Form1.ID+"'", connection);
 
                 DataSet dt = new DataSet();
                 connection.Open();

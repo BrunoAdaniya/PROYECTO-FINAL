@@ -16,7 +16,6 @@ namespace WindowsFormsApp2
         public static int ID;
 
         OleDbConnection connection;
-        OleDbCommand command = new OleDbCommand();
 
         public static String User;
         public static String Password;
@@ -41,7 +40,7 @@ namespace WindowsFormsApp2
             else
             {
                 connection.Open(); 
-                OleDbCommand query = new OleDbCommand("SELECT User, Password, Id FROM InformacionUsuarios WHERE User= '" + txtUser.Text + "' AND Password= '" + txtPassword.Text + "'", connection);
+                OleDbCommand query = new OleDbCommand("SELECT User, Password, Id FROM INFORMACION WHERE User= '" + txtUser.Text + "' AND Password= '" + txtPassword.Text + "'", connection);
                 string dato = Convert.ToString(query);
 
                 OleDbDataReader Reader = query.ExecuteReader();
@@ -62,23 +61,6 @@ namespace WindowsFormsApp2
                     Password = txtPassword.Text;
                 }
                 connection.Close();
-
-                /*connection.Open();
-                OleDbCommand query2 = new OleDbCommand("SELECT Id FROM InformacionUsuarios WHERE User= '" + Form1.User + "'", connection);
-                string dato2 = Convert.ToString(query2);
-                OleDbDataReader Reader2 = query2.ExecuteReader();
-
-                if (Reader2.Read())
-                {
-                    ID = Reader2.GetInt32(0);
-
-                    Emociones emoc = new Emociones();
-                    this.Hide();
-                    emoc.Show();
-                }
-
-                connection.Close();
-                */
 
                 if (i == 0)
                 {

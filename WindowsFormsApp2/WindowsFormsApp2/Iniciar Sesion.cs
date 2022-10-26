@@ -19,6 +19,7 @@ namespace WindowsFormsApp2
 
         public static String User;
         public static String Password;
+        public static String Rol;
         public static DateTime TiempoInicio = DateTime.Now;
         public Form1()
         {
@@ -40,7 +41,7 @@ namespace WindowsFormsApp2
             else
             {
                 connection.Open(); 
-                OleDbCommand query = new OleDbCommand("SELECT Usuario, Contraseña, Id FROM info WHERE Usuario= '" + txtUser.Text + "' AND Contraseña= '" + txtPassword.Text + "'", connection);
+                OleDbCommand query = new OleDbCommand("SELECT Usuario, Contraseña, Id, Rol FROM info WHERE Usuario= '" + txtUser.Text + "' AND Contraseña= '" + txtPassword.Text + "'", connection);
                 string dato = Convert.ToString(query);
 
                 OleDbDataReader Reader = query.ExecuteReader();
@@ -51,11 +52,15 @@ namespace WindowsFormsApp2
                 {
                     MessageBox.Show("Bienvenido, " + Reader.GetString(0));
                     ID = Reader.GetInt32(2);
+                    Rol = Reader.GetString(3);
                     i++;
 
-                    Emociones emoc = new Emociones();
-                    this.Hide();
-                    emoc.Show();
+                    if (Rol == "Estudiante")
+                    {
+                        Emociones emoc = new Emociones();
+                        this.Hide();
+                        emoc.Show();
+                    }
 
                     User = txtUser.Text;
                     Password = txtPassword.Text;
@@ -75,6 +80,13 @@ namespace WindowsFormsApp2
             Crear_Usuario cu = new Crear_Usuario();
             this.Hide();
             cu.Show();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Iniciar_Sesionn prg= new Iniciar_Sesionn();
+            this.Hide();
+            prg.Show();
         }
     }
 }

@@ -64,11 +64,17 @@
     <Compile Include="Iniciar Sesion.Designer.cs">
       <DependentUpon>Iniciar Sesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Iniciar_Sesionn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Iniciar_Sesionn.Designer.cs">
+      <DependentUpon>Iniciar_Sesionn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Juego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Juego.Designer.cs">
+      <DependentUpon>Juego.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Progreso.cs">
@@ -87,8 +93,11 @@
     <EmbeddedResource Include="Iniciar Sesion.resx">
       <DependentUpon>Iniciar Sesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="Iniciar_Sesionn.resx">
+      <DependentUpon>Iniciar_Sesionn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Juego.resx">
+      <DependentUpon>Juego.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Progreso.resx">
       <DependentUpon>Progreso.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp2
 {
-    partial class Menu
+    partial class Juego
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnProgress = new System.Windows.Forms.Button();
-            this.btnGame = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnProgress
+            // label1
             // 
-            this.btnProgress.Location = new System.Drawing.Point(208, 169);
-            this.btnProgress.Name = "btnProgress";
-            this.btnProgress.Size = new System.Drawing.Size(145, 118);
-            this.btnProgress.TabIndex = 0;
-            this.btnProgress.Text = "PROGRESO";
-            this.btnProgress.UseVisualStyleBackColor = true;
-            this.btnProgress.Click += new System.EventHandler(this.BtnProgress_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.label1.Location = new System.Drawing.Point(301, 179);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "JUEGOS";
             // 
-            // btnGame
-            // 
-            this.btnGame.Location = new System.Drawing.Point(449, 169);
-            this.btnGame.Name = "btnGame";
-            this.btnGame.Size = new System.Drawing.Size(145, 118);
-            this.btnGame.TabIndex = 1;
-            this.btnGame.Text = "JUEGO";
-            this.btnGame.UseVisualStyleBackColor = true;
-            // 
-            // Menu
+            // Juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnGame);
-            this.Controls.Add(this.btnProgress);
-            this.Name = "Menu";
-            this.Text = "Menu";
+            this.Controls.Add(this.label1);
+            this.Name = "Juego";
+            this.Text = "Juego";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnProgress;
-        private System.Windows.Forms.Button btnGame;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -31,15 +31,33 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("Completa los campos");
             }
-            else
+            else if(comboBox1.SelectedItem.ToString() == "Profesor/Padre")
             {
                 connection.Open();
                 OleDbCommand command = new OleDbCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO info (Usuario, Contraseña) VALUES ('" + txtUser.Text + "', '" + txtPassword.Text + "')";
+                command.CommandText = "INSERT INTO info (Usuario, Contraseña, Rol) VALUES ('" + txtUser.Text + "', '" + txtPassword.Text + "', '"+ "Admin" + "')";
                 command.ExecuteNonQuery();
-                MessageBox.Show("Su usuario fue creado correctamente");
+                MessageBox.Show("Su usuario fue creado correctamente, ahora, ahora inicia sesion");
                 connection.Close();
+
+                Form1 f1 = new Form1();
+                this.Hide();
+                f1.Show();
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Estudiante")
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO info (Usuario, Contraseña, Rol) VALUES ('" + txtUser.Text + "', '" + txtPassword.Text + "', '" + "Estudiante" + "')";
+                command.ExecuteNonQuery();
+                MessageBox.Show("Su usuario fue creado correctamente, ahora inicia sesion");
+                connection.Close();
+
+                Form1 f1 = new Form1();
+                this.Hide();
+                f1.Show();
             }
         }
     }

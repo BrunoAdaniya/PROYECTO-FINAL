@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp2
 {
-    partial class Crear_Usuario
+    partial class Iniciar_Sesionn
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(349, 329);
+            this.button1.Location = new System.Drawing.Point(356, 268);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Crear Usuario";
+            this.button1.Text = "Iniciar Sesion";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 202);
+            this.label2.Location = new System.Drawing.Point(247, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 8;
@@ -58,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 147);
+            this.label1.Location = new System.Drawing.Point(247, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 7;
@@ -66,43 +65,30 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(328, 199);
+            this.txtPassword.Location = new System.Drawing.Point(327, 206);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(167, 20);
             this.txtPassword.TabIndex = 6;
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(328, 144);
+            this.txtUser.Location = new System.Drawing.Point(327, 151);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(167, 20);
             this.txtUser.TabIndex = 5;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Profesor/Padre",
-            "Estudiante"});
-            this.comboBox1.Location = new System.Drawing.Point(349, 251);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
-            // 
-            // Crear_Usuario
+            // Iniciar_Sesionn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
-            this.Name = "Crear_Usuario";
-            this.Text = "Crear_Usuario";
-            this.Load += new System.EventHandler(this.Crear_Usuario_Load);
+            this.Name = "Iniciar_Sesionn";
+            this.Text = "Iniciar_Sesionn";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,6 +101,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

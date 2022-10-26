@@ -17,8 +17,6 @@ namespace WindowsFormsApp2
         int ID2;
         int puntos;
         int tiempo;
-        string emoc;
-        string fecha; 
         public Progreso()
         {
             InitializeComponent();
@@ -27,6 +25,9 @@ namespace WindowsFormsApp2
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            string[] EmocionesRecibidas = new string[5];// Este array sirve para guardar la emocion de cada registro
+            string[] FechasRecibidas = new string[5];// Este array sirve para guardar la fecha de cada registro
+
             connection.Open();
             OleDbCommand query = new OleDbCommand("SELECT Id FROM info WHERE Usuario= '"+textBox1.Text+"'", connection);
             string dato = Convert.ToString(query);
@@ -41,15 +42,15 @@ namespace WindowsFormsApp2
             connection.Close();
 
             connection.Open();
-            OleDbCommand Emocion_Fecha  = new OleDbCommand ("SELECT TOP 3 Emocion, Fecha FROM ConsultaEmociones WHERE Id_user=" + ID2 + " ORDER BY Fecha DESC", connection);
+            OleDbCommand Emocion_Fecha  = new OleDbCommand ("SELECT TOP 5 Emocion, Fecha FROM ConsultaEmociones WHERE Id_user=" + ID2 + " ORDER BY Fecha DESC", connection);
             string datardo = Convert.ToString(Emocion_Fecha);
             OleDbDataReader Reader2 = Emocion_Fecha.ExecuteReader();
 
             int i2 = 0;
             while (Reader2.Read())
             {
-                emoc = Reader2.GetString(0);
-                fecha = Reader2.GetString(1);
+                EmocionesRecibidas[i2] = Reader2.GetString(0);
+                FechasRecibidas[i2] = Reader2.GetString(1);
 
                 i2++;
             }
@@ -65,13 +66,18 @@ namespace WindowsFormsApp2
                 puntos = Reader3.GetInt32(0);
                 tiempo = Reader3.GetInt32(1);
                 i3++;
-                label1.Text = label1.Text + " " + puntos;
-                label4.Text = label4.Text + " " + tiempo;
-                label3.Text = label3.Text + " " + emoc;
-                label2.Text = label2.Text + " " + fecha;
             }
 
-            
+            foreach(string s in FechasRecibidas)
+                label2.Text = label2.Text + " " + s + "  "; //esto lo que hace es concatenar strings= mecanicamente o que hace es agarrar el label + un espacion dedspues le suma la fecha + suma un espacio y despues hace los mismo con el otro registro (osea la primera vez agarra el primer registro, la segunda el segundo registro y asi suecisvamente hasta llegar al numeror del array)
+
+            label4.Text = label4.Text + " " + tiempo;
+
+            foreach(string s in EmocionesRecibidas)
+                label3.Text = label3.Text + " " + s + " ";// aca hace lo mismo que el de arriba
+
+            label1.Text = label1.Text + " " + puntos;
+
             connection.Close();
         }
 

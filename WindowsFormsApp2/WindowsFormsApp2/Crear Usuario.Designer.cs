@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(349, 329);
+            this.button1.Location = new System.Drawing.Point(353, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 9;
@@ -49,16 +49,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 202);
+            this.label2.Location = new System.Drawing.Point(260, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Contraseña:";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 147);
+            this.label1.Location = new System.Drawing.Point(274, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 7;
@@ -66,14 +67,14 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(328, 199);
+            this.txtPassword.Location = new System.Drawing.Point(326, 199);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(167, 20);
             this.txtPassword.TabIndex = 6;
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(328, 144);
+            this.txtUser.Location = new System.Drawing.Point(326, 144);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(167, 20);
             this.txtUser.TabIndex = 5;
@@ -102,6 +103,7 @@
             this.Controls.Add(this.txtUser);
             this.Name = "Crear_Usuario";
             this.Text = "Crear_Usuario";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Crear_Usuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

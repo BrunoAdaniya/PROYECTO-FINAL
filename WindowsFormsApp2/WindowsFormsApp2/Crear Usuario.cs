@@ -60,5 +60,10 @@ namespace WindowsFormsApp2
                 f1.Show();
             }
         }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
